@@ -29,6 +29,22 @@ The front end runs on port `3000`
 http://localhost:3000/
 ```
 
+## Axios Examples
+
+Fetching a resource:
+
+```javascript
+const { data } = await axios.get("http://localhost:4000/dogs")
+```
+
+Posting a resource:
+
+```javascript
+const { data } = await axios.post("http://localhost:4000/dogs", {
+  name: this.state.newDog
+})
+```
+
 ## API Endpoints
 
 The app comes with one resource - `dogs`
