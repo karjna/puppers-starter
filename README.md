@@ -110,3 +110,109 @@ Response:
   "name": "Benny"
 }
 ```
+
+## Adding Your Own Data
+
+You can add whatever data you want by editing `api/db.json`
+
+More comprehensive documentation can be read [here](https://github.com/typicode/json-server)
+
+Here we have a `dogs` resource:
+
+```
+{
+  "dogs": [
+    {
+      "id": 1,
+      "name": "Doge"
+    }
+  ]
+}
+```
+
+But what if we wanted to add an `owners` resource? How would we do that? Simple!
+
+We can just append it like so:
+
+```
+{
+  "dogs": [
+    {
+      "id": 1,
+      "name": "Doge"
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "JP"
+    },
+  ]
+}
+```
+
+Cool. And what if I want to create a relationship between `owner` and `dog`?
+
+I can do this:
+
+```
+{
+  "dogs": [
+    {
+      "id": 1,
+      "name": "Doge"
+      "ownerId": 1
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "JP"
+    },
+  ]
+}
+```
+
+Note that `ownerId` uses camel case and corresponds to the `owners` resource. With this relationship set up, `json-server` automatically generates a few endpoints for us:
+
+Request:
+
+```
+GET http://localhost:4000/owners/1/dogs
+```
+
+Response:
+
+```
+[
+  {
+    id: 1,
+    name: "Doge",
+    ownerId: 1
+  }
+]
+```
+
+As well as
+
+Request:
+
+```
+GET http://localhost:4000/owners/1?_embed=dogs
+```
+
+Response:
+
+```
+{
+  id: 1,
+  name: "jp",
+  dogs: [
+    {
+      id: 1,
+      name: "Doge",
+      ownerId: 1
+    }
+  ]
+}
+```
