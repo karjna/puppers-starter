@@ -1,0 +1,36 @@
+{
+  "dogs": [
+    {
+      "id": 2,
+      "name": "Benny"
+    },
+    {
+      "id": 2,
+      "name": "Borgo"
+    },
+    {
+      "id": 2,
+      "name": "Dewey"
+    },
+    {
+      "id": 2,
+      "name": "Percy"
+    },
+    {
+      "id": 2,
+      "name": "Peter"
+    },
+    {
+      "id": 2,
+      "name": "Pudge"
+    },
+    {
+      "id": 2,
+      "name": "Riggins"
+    },
+    {
+      "id": 2,
+      "name": "Doge"
+    }
+  ]
+}
