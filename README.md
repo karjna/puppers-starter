@@ -13,6 +13,14 @@ npm start
 
 Running `npm start` will spin up a React server as well as a fake api
 
+When the server starts up, you should see this:
+
+![Front End](https://github.com/jeanpaulsio/puppers-starter/blob/master/screenshot1.png)
+
+Navigate to `http://localhost:4000/dogs` and you should see this:
+
+![Back End](https://github.com/jeanpaulsio/puppers-starter/blob/master/screenshot2.png)
+
 ## Front End
 
 The front end runs on port `3000`
